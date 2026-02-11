@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Knife-Modren"
+rootProject.name = "Knife"
 include(":app", ":knife")
