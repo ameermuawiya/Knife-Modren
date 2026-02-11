@@ -38,8 +38,8 @@ Supports Android 4.0+
 
 ![example.gif](./example.gif "example.gif")
 
-Download the [demo APK](https://github.com/mthli/Knife/releases/download/v1.1/KnifeDemo.1.1.apk)  
-Explore the [source code](https://github.com/mthli/Knife/tree/master/app)
+Download the [demo APK](https://github.com/ameermuawiya/Knife-Modren/releases/download/2.0.0/app-debug.apk)  
+Explore the [source code](https://github.com/ameermuawiya/Knife-Modren/tree/master/app)
 
 More experiments: [mthli/Type](https://github.com/mthli/Type)
 
