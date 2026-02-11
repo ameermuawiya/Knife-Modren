@@ -1,121 +1,129 @@
-Knife
-===
+# Knife
+
+## ✨ Knife Editor – Change Log
+
+- 🚀 Migrated project to **Gradle 9**
+- 🔧 Updated Android Gradle Plugin and dependencies
+- 🎨 Migrated UI to **Material Design 3**
+- 🧩 Replaced legacy views with modern Material components
+- 🌗 Improved light and dark theme consistency
+- 🛠 Redesigned formatting toolbar using Material 3 spacing rules
+- 🔁 Moved Undo and Redo to bottom tools bar
+- 🔄 Fixed source / code toggle to switch both ways correctly
+- ⚠️ Added confirmation dialog before clearing formatting
+- 🎯 Centralized editor styling using `KnifeText` attributes
+- 🎨 Applied Material 3 semantic colors instead of hardcoded values
+- ✍️ Improved bullets, quotes, and link styling
+- ♿ Added tooltips and content descriptions for accessibility
+- 👆 Improved touch targets for better usability
+- 🧯 Fixed crashes related to editor initialization
+- 🧠 Fixed text selection and ActionMode conflicts
+- 🔁 Improved undo / redo stability
+- 🧹 Cleaned and organized codebase
+- 🗑 Removed unused logic and hardcoded strings
+
+---
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Knife-brightgreen.svg?style=flat-square)](http://android-arsenal.com/details/1/2924)
 
-Knife (extend EditText) is a rich text editor component for writing documents in Android.
+Knife (extends EditText) is a lightweight rich text editor component for writing styled documents in Android.
 
-Just select text and use one line code to style it!
+Just select text and apply formatting with a single line of code.
 
-Support Android 4.0+
+Supports Android 4.0+
 
-## Example
+---
 
-![example.gif](./example.gif "example.gif")
+## 📸 Example
 
-Here has a [demo apk](https://github.com/mthli/Knife/releases/download/v1.1/KnifeDemo.1.1.apk "KnifeDemo.1.1.apk"), and it's [source code](https://github.com/mthli/Knife/tree/master/app "KnifeDemo.1.1.apk's source code"), very easy to understand~
+![example.gif](./example.webm "example.webm")
 
-More experiments see [mthli/Type](https://github.com/mthli/Type "mthli/Type").
+Download the [demo APK](https://github.com/mthli/Knife/releases/download/v1.1/KnifeDemo.1.1.apk)  
+Explore the [source code](https://github.com/mthli/Knife/tree/master/app)
 
-## Api
+More experiments: [mthli/Type](https://github.com/mthli/Type)
 
- - `bold(boolean valid)` __bold__ the selected text.
- 
- - `italic(boolean valid)` _italic_ the selected text.
- 
- - `underline(boolean valid)` \<u>underline\</u> the selected text.
- 
- - `strikethrough(boolean valid)` <s>strikethrough</s> the selected text. 
- 
- - `bullet(boolean valid)` bullet the selected text.
- 
- - `quote(boolean valid)` quote the selected text.
- 
- - `link(String link)` and `link(String link, int start, int end)` to link the text.
- 
- - `contains(int FORMAT)` return `true` if the selected text contains the FORMAT.
- 
- - `clearFormats()` clear all formats. 
- 
- - `redo()` when text changed, you can redo it!
- 
- - `undo()` when text change, you can also undo it!
- 
- - `fromHtml()` import from HTML file. 
- 
- - `toHtml()` export as HTML file.
- 
-If you want to get more control of the editable text, just extend KnifeText to get all protected method.
+---
 
-#### Custom
+## 🧠 API
 
- - `app:bulletColor`
- 
- - `app:bulletRadius`
-    
- - `app:bulletGapWidth`
- 
- - `app:historyEnable` `true` to enable record history, so you can `redo()` and `undo()`.
-    
- - `app:historySize` the record max limit.
-    
- - `app:linkColor`
-    
- - `app:linkUnderline` `true` to enable link underline.
-    
- - `app:quoteColor`
-    
- - `app:quoteStripeWidth` the quote line width.
-    
- - `app:quoteCapWidth`
- 
-#### TODO
+- `bold(boolean valid)` → Apply bold
+- `italic(boolean valid)` → Apply italic
+- `underline(boolean valid)` → Apply underline
+- `strikethrough(boolean valid)` → Apply strikethrough
+- `bullet(boolean valid)` → Apply bullet list
+- `quote(boolean valid)` → Apply quote block
+- `link(String link)` → Apply link to selection
+- `link(String link, int start, int end)` → Apply link to range
+- `contains(int FORMAT)` → Check if selection contains format
+- `clearFormats()` → Remove all formatting
+- `undo()` → Undo last change
+- `redo()` → Redo change
+- `fromHtml()` → Import from HTML
+- `toHtml()` → Export to HTML
 
- - Insert image.
+Extend `KnifeText` for deeper control.
 
-## Gradle
+---
 
-At your top-level `build.gradle` file:
+## 🎛 Custom Attributes
 
-    repositories {
-        // ...
-        maven { url 'https://jitpack.io' }
+- `app:bulletColor`
+- `app:bulletRadius`
+- `app:bulletGapWidth`
+- `app:historyEnable`
+- `app:historySize`
+- `app:linkColor`
+- `app:linkUnderline`
+- `app:quoteColor`
+- `app:quoteStripeWidth`
+- `app:quoteGapWidth`
+
+---
+
+## 📦 Gradle Setup
+
+Add JitPack repository:
+
+    dependencyResolutionManagement {
+        repositories {
+            maven { url = uri("https://jitpack.io") }
+        }
     }
-    
-And then at your project `build.gradle` file:
+
+Add dependency:
 
     dependencies {
-        compile 'com.github.mthli:Knife:v1.1'
+        implementation("com.github.mthli:Knife:v1.1")
     }
-    
-Done!
 
-## Reference
+---
 
- - [Spans, a Powerful Concept.](http://flavienlaurent.com/blog/2014/01/31/spans/ "Spans, a Powerful Concept.")
- 
- - [Spanned | Android Developers](http://developer.android.com/reference/android/text/Spanned.html "Spanned | Android Developers")
- 
- - [core/java/android/text/Html.java - Google Git](https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/text/Html.java "core/java/android/text/Html.java - Google Git")
+## 📚 References
 
-## Thanks
+- Spans, a Powerful Concept  
+  http://flavienlaurent.com/blog/2014/01/31/spans/
 
- - [Squire](https://github.com/neilj/Squire "Squire")
- 
- - [html-textview](https://github.com/SufficientlySecure/html-textview "html-textview")
+- Spanned | Android Developers  
+  http://developer.android.com/reference/android/text/Spanned.html
 
-## License
+- Html.java Source  
+  https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/text/Html.java
 
-    Copyright 2015 Matthew Lee
+---
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+## 🙏 Thanks
 
-        http://www.apache.org/licenses/LICENSE-2.0
+- https://github.com/neilj/Squire
+- https://github.com/SufficientlySecure/html-textview
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+---
+
+## 📜 License
+
+Copyright 2015 Matthew Lee
+
+Licensed under the Apache License, Version 2.0  
+http://www.apache.org/licenses/LICENSE-2.0
+
+Distributed on an "AS IS" BASIS, without warranties or conditions of any kind.
